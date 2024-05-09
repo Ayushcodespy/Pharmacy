@@ -1,10 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://img.freepik.com/free-photo/perspective-exterior-nobody-empty-box_1258-260.jpg?w=740&t=st=1715179297~exp=1715179897~hmac=7b3277222fcf476445e8304c05f7b7aa82a94fca1b6f2c81c26c9ae1495031c3');
+    background-size: cover;
+    background-position: center;
+}
+
 nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
     border: 1px solid;
-    background-color: rgb(250, 127, 168);
+    /* background-color: rgb(250, 127, 168); */
+    background-image: linear-gradient(to right, #ff5f6d, #ffc371);
+    position: fixed;
+    z-index: 1000;
     height: 57px;
+    width: 100%;
 }
 
 nav ul{
@@ -55,8 +68,130 @@ img{
     display: flex;
 }
 
-.main{
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 50px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+h1 {
+    padding-top: 100px;
+    color: #0056b3;
+    position: relative;
+    font-size: 48px;
+    text-align: center;
+    animation: slideInFromBottom 1.5s ease forwards;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+h2{
+    color: black;
+    font-weight: 800;
+}
+
+.medicine-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* Add margin-bottom to create space between cards */
+    height: 300px; /* Set a fixed height for the medicine cards */
+}
+
+.medicine-card:hover {
+    transform: scale(1.05);
+}
+
+.medicine-card img {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    height: 100%; /* Make the image fill the entire container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.medicine-card:hover img {
+    transform: scale(1.2);
+}
+
+.medicine-info {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    margin-top: 10px; /* Add margin-top to create space between image and info */
+}
+
+.medicine-card:hover .medicine-info {
+    transform: translateY(0);
+}
+
+.medicine-info h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 5px; /* Add margin-bottom to create space between heading and paragraph */
+}
+
+.medicine-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 5px; /* Add margin-top to create space between paragraphs */
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .medicine-info h3 {
+        font-size: 18px;
+    }
+
+    .medicine-info p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 3px 8px;
+    }
 }
