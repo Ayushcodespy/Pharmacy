@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
+    <title>Sign up page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +13,14 @@
 </head>
 
 <body>
-    <!-- popup message -->
-    {% if message %}
-    <div class="popup">
-        <span class="popuptext" id="myPopup">{{ message }}</span>
-    </div>
-    {% endif %}
-
 
     <!-- form -->
     <div class="container" id="container">
 
-    
-
-
-
-        <!-- sign in -->
-        <div class="form signin-container">
-            <form action="/" method="POST">
-                <h1>Login</h1>
+        <!-- sign up -->
+        <div class="form signup-container">
+            <form action="/register" method="POST">
+                <h1>Create an account</h1>
 
                 <!-- icons -->
                 <div class="social-container">
@@ -39,22 +28,28 @@
                     <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
                     <a href="#" class="social"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <span>or use your account</span>
+                <span>or use your email for registration</span>
 
                 <div class="input-field">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text"  name="name" placeholder="Username">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
                 </div>
-
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                </div>
                 <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                 </div>
-                <a href="#">forgot your password?</a>
-                <button>Sign in</button>
+
+                <button>Sign up</button>
             </form>
         </div>
 
+
+
+        
         <!-- overlay -->
         <div class="overlay-container">
             <div class="overlay">
@@ -68,47 +63,12 @@
                     <h1>Hello User!</h1>
                     <p>Enter your personal details and star your journey with us</p>
                     <img src="static/image/d3.jpg" style="width: 12rem; height: 12rem; margin-top: 8%; border-radius: 10px;">
-                    <a href="{{url_for('register')}}"><button class="btn" id="signup">Sign up</button></a>
+                    <a href="{{url_for('login')}}"><button class="btn" id="signup">Sign in</button></a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <script>
-        const signUpButton = document.getElementById('signup');
-        const signInButton = document.getElementById('signin');
-        const container = document.getElementById('container');
-
-        signUpButton.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
-        });
-
-        signInButton.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
-        });
-    </script> -->
-
-    <script>
-        // When the user clicks anywhere outside of the popup, close it
-        window.onclick = function(event) {
-            if (!event.target.matches('.popup')) {
-                var popups = document.getElementsByClassName("popuptext");
-                for (var i = 0; i < popups.length; i++) {
-                    var popup = popups[i];
-                    if (popup.classList.contains('show')) {
-                        popup.classList.remove('show');
-                    }
-                }
-            }
-        }
-        
-        // Show the popup message
-        document.addEventListener("DOMContentLoaded", function(event) {
-            var popup = document.getElementById("myPopup");
-            if (popup) {
-                popup.classList.add('show');
-            }
-        });
-        </script>
+   
 
 </body>
 

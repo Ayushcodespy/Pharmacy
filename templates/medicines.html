@@ -3,27 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicines page</title>
+    <title>Medicines</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/medicines.css')}}">
 </head>
 <body>
+
     <header>
+
         <nav>
             <div class="logo"><img src="static/image/logo3.png"></div>
             <div class="rightside"></div>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/doctors">Doctor</a></li>
-                <li><a href="/medicines">Medicines</a></li>
-                <li><a href="/services">About</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('doctors')}}">Doctor</a></li>
+                <li><a href="{{url_for('medicines')}}">Medicines</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
             </ul>
 
         </nav>
     </header>
-    
 
+    <h1>Medicines</h1>
+    <div class="container">
+        
+        <div class="category">
+            <h2>Pain Relief</h2>
+            <div class="medicine-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST8q-Z9EK8LWj3EivJ3uce6Y82gu_5NMGPRA&s" alt="Paracetamol">
+                <div class="medicine-info">
+                    <h3>Paracetamol</h3>
+                    <p>Paracetamol is a common pain reliever.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/319597573/MH/NE/SR/135658020/ibuprofen-400-mg-bp-tablets-500x500.jpg" alt="Ibuprofen">
+                <div class="medicine-info">
+                    <h3>Ibuprofen</h3>
+                    <p>Ibuprofen is used to relieve pain and reduce inflammation.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Pain Relief category -->
+        </div>
+        
+        <div class="category">
+            <h2>Allergy Relief</h2>
+            <div class="medicine-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/5/311971664/FU/KT/PV/11858298/cetirizine-tablet-1000x1000.webp" alt="Cetirizine">
+                <div class="medicine-info">
+                    <h3>Cetirizine</h3>
+                    <p>Cetirizine is an antihistamine used to relieve allergy symptoms.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/332709645/ER/VU/LD/6299000/loratadine-10-mg-tablets-1000x1000.jpeg" alt="Loratadine">
+                <div class="medicine-info">
+                    <h3>Loratadine</h3>
+                    <p>Loratadine is an antihistamine used to treat allergies.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Allergy Relief category -->
+        </div>
+        
+        <div class="category">
+            <h2>Cough & Cold</h2>
+            <div class="medicine-card">
+                <img src="https://www.benadryl.co.in/sites/benadryl_in/files/bottles_1_1.png" alt="Benadryl">
+                <div class="medicine-info">
+                    <h3>Benadryl</h3>
+                    <p>Benadryl is used to relieve symptoms of allergies, hay fever, and the common cold.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://m.media-amazon.com/images/I/71TTR-7AvgL._AC_SL1500_.jpg" alt="Robitussin">
+                <div class="medicine-info">
+                    <h3>Robitussin</h3>
+                    <p>Robitussin is a cough suppressant and expectorant.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Cough & Cold category -->
+        </div>
 
-    <h1>This is medicines page</h1>
+        <div class="category">
+            <h2>Digestive Health</h2>
+            <div class="medicine-card">
+                <img src="https://images-cdn.ubuy.co.in/63ccf301134da41607465bf3-pepto-bismol-ultra-liquid-2x.jpg" alt="Pepto-Bismol">
+                <div class="medicine-info">
+                    <h3>Pepto-Bismol</h3>
+                    <p>Pepto-Bismol is used to treat diarrhea, nausea, heartburn, indigestion, and upset stomach.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://alltravelsizes.com/cdn/shop/products/13731-Tums-Ultra-Strength-Peppermint-Roll-of-12-front2_d98659e4-0089-47ec-89fc-218b339b9e87_1024x1024@2x.jpg?v=1631478103" alt="Tums">
+                <div class="medicine-info">
+                    <h3>Tums</h3>
+                    <p>Tums is an antacid used to relieve heartburn, sour stomach, acid indigestion, and upset stomach.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Digestive Health category -->
+        </div>
+
+        <div class="category">
+            <h2>First Aid</h2>
+            <div class="medicine-card">
+                <img src="https://www.band-aid.com/sites/bandaid_us/files/styles/product_image/public/product-images/bab_381370044307_band_aid_band_aid_flexible_fabric_assorted_30ct_000_1.jpeg" alt="Band-Aid">
+                <div class="medicine-info">
+                    <h3>Band-Aid</h3>
+                    <p>Band-Aid is used to cover minor cuts, scrapes, and wounds.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://www.bigbasket.com/media/uploads/p/l/208012_3-savlon-antiseptic-disinfectant-liquid.jpg" alt="Antiseptic">
+                <div class="medicine-info">
+                    <h3>Antiseptic</h3>
+                    <p>Antiseptic is used to clean and disinfect wounds.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in First Aid category -->
+        </div>
+
+        <div class="category">
+            <h2>Supplements</h2>
+            <div class="medicine-card">
+                <img src="https://m.media-amazon.com/images/I/61mtSUqOhdS._SL1500_.jpg" alt="Vitamin C">
+                <div class="medicine-info">
+                    <h3>Vitamin C</h3>
+                    <p>Vitamin C is a dietary supplement used to support the immune system.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://images-cdn.ubuy.co.in/660857fbf7c288084b469fc9-nature-made-fish-oil-2400mg-per-serving.jpg" alt="Fish Oil">
+                <div class="medicine-info">
+                    <h3>Fish Oil</h3>
+                    <p>Fish Oil is a source of omega-3 fatty acids, which are important for heart health.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Vitamins & Supplements category -->
+        </div>
+
+        <div class="category">
+            <h2>Skin Care  &<br> Solutions</h2>
+            <div class="medicine-card">
+                <img src="https://www.clickoncare.com/cdn/shop/files/Cetaphil-Gentle-Skin-Cleanser1000ml05.jpg?v=1685184718&width=600" alt="Vitamin C">
+                <div class="medicine-info">
+                    <h3>Cetaphil Gentle Skin Cleanser</h3>
+                    <p>A mild, non-irritating cleanser suitable for all skin types.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://images-static.nykaa.com/media/catalog/product/e/3/e3f8a3c4891080614470_3030524.jpg" alt="Fish Oil">
+                <div class="medicine-info">
+                    <h3>Neutrogena Hydro Boost Water Gel</h3>
+                    <p>Hydrates and replenishes the skin with hyaluronic acid for a plump, dewy complexion.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Vitamins & Supplements category -->
+        </div>
+
+        <div class="category">
+            <h2>Oral Care  &<br> Solutions</h2>
+            <div class="medicine-card">
+                <img src="https://images-cdn.ubuy.co.in/65fbc0784f010317625dedc8-listerine-cool-mint-antiseptic-mouthwash.jpg" alt="Vitamin C">
+                <div class="medicine-info">
+                    <h3>Listerine Antiseptic Mouthwash</h3>
+                    <p>Kills germs, reduces plaque, and freshens breath for a cleaner, healthier mouth.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="medicine-card">
+                <img src="https://images-cdn.ubuy.co.in/646ea1020d6f1677c9108c6f-oral-b-pro-health-comfort-plus-dental.jpg" alt="Fish Oil">
+                <div class="medicine-info">
+                    <h3>Oral-B Glide Pro-Health Comfort Plus Dental Floss</h3>
+                    <p>Slides easily between teeth, removing plaque and debris for superior cleaning.</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more medicine cards in Vitamins & Supplements category -->
+        </div>
+
+        <!-- Add more categories and medicines as needed -->
+        
+    </div>
 </body>
 </html>

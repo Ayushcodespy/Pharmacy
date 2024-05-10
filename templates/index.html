@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/pharm.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -26,11 +26,11 @@
             <div class="logo"><img src="static/image/logo3.png"></div>
             <div class="rightside"></div>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/doctors">Doctor</a></li>
-                <li><a href="/medicines">Medicines</a></li>
-                <li><a href="/services">About</a></li>
-                <li><a href="/login">Login</a></li>
+                <!-- <li><a href="{{url_for('index')}}">Home</a></li> -->
+                <li><a href="{{url_for('doctors')}}">Doctor</a></li>
+                <li><a href="{{url_for('medicines')}}">Medicines</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
             </ul>
 
         </nav>
